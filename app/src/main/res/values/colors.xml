@@ -17,5 +17,6 @@
     <color name="translucent_background">#10000000</color>
 
     <color name="black_overlay">#66000000</color>
-
+    <color name="red">#F44336</color>
+    <color name="white">@android:color/white</color>
 </resources>

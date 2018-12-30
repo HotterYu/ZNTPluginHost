@@ -5,7 +5,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,7 +16,7 @@ import com.qihoo360.replugin.model.PluginInfo;
 
 import java.io.File;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
 
     private String pluginName1 = "";
@@ -41,12 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnStart1 = (Button)findViewById(R.id.btn_start_1);
         Button btnStart2 = (Button)findViewById(R.id.btn_start_2);
+        Button btnStart3 = (Button)findViewById(R.id.btn_start_3);
         btnStart1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 loadPlugin1();
-                RePlugin.startActivity(MainActivity.this, RePlugin.createIntent(pluginName1,
-                        "com.znt.vodbox.activity.LoginActivity"));
+                RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("demo2",
+                        "com.qihoo360.replugin.sample.demo2.MainActivity"));
             }
         });
         btnStart2.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 loadPlugin2();
                 RePlugin.startActivity(MainActivity.this, RePlugin.createIntent(pluginName2,
                         "com.znt.vodbox.activity.WelcomeActivity"));
+            }
+        });
+        btnStart3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                System.exit(0);
             }
         });
     }

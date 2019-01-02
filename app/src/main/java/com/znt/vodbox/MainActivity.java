@@ -45,8 +45,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 loadPlugin1();
-                RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("demo2",
-                        "com.qihoo360.replugin.sample.demo2.MainActivity"));
+                RePlugin.startActivity(MainActivity.this, RePlugin.createIntent(pluginName1,
+                        "com.znt.speaker.VideoPageActivity"));
             }
         });
         btnStart2.setOnClickListener(new View.OnClickListener() {
